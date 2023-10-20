@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: backgroundAnimation 10s infinite alternate;
+    background: linear-gradient(180deg, #3498db 0%, #87CEEB 100%);
+    overflow: hidden;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: moveContent 4s ease-in-out infinite alternate;
+}
+
+h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: moveBalloons 6s linear infinite;
+}
+
+.balloon {
+    width: 100px;
+    height: 150px;
+    background-color: #3498db;
+    border-radius: 50% 50% 60% 60%;
+    position: absolute;
+    animation: float 4s ease-in-out infinite alternate;
+}
+
+@keyframes moveContent {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveBalloons {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
